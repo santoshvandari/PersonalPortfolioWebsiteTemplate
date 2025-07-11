@@ -211,52 +211,78 @@ The project focused heavily on performance optimization and user experience, wit
                 </Link>
               </motion.div>
 
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <motion.div
-                  initial={{ opacity: 0, x: -30 }}
+                  initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  className="relative"
                 >
-                  <div className="glass-card p-8 rounded-3xl">
+                  <div className="glass-card p-10 rounded-3xl relative overflow-hidden group">
+                    {/* Animated Border */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500"></div>
+                    
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.4 }}
-                      className="flex items-center space-x-3 mb-6"
+                      className="flex items-center space-x-4 mb-8"
                     >
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
-                        <Sparkles className="w-6 h-6 text-white" />
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+                        <Sparkles className="w-8 h-8 text-white animate-pulse" />
                       </div>
                       <div>
-                        <span className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide">
+                        <span className="text-sm font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
                           Featured Project
                         </span>
+                        <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-1"></div>
                       </div>
                     </motion.div>
                     
-                    <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-600 dark:from-white dark:via-blue-200 dark:to-purple-300 bg-clip-text text-transparent mb-4">
+                    <motion.h1
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      className="text-5xl md:text-6xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-purple-600 dark:from-white dark:via-blue-200 dark:to-purple-300 bg-clip-text text-transparent mb-6 leading-tight"
+                    >
                       {project.title}
-                    </h1>
+                    </motion.h1>
                     
-                    <p className="text-xl font-semibold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text mb-6">
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.8 }}
+                      className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text mb-8"
+                    >
                       {project.subtitle}
-                    </p>
+                    </motion.p>
                     
-                    <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 1 }}
+                      className="text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed"
+                    >
                       {project.description}
-                    </p>
+                    </motion.p>
 
-                    <div className="flex flex-wrap gap-4 mb-8">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 1.2 }}
+                      className="flex flex-wrap gap-6 mb-10"
+                    >
                       <motion.a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-600 text-white rounded-xl hover:from-gray-900 hover:to-black transition-all duration-300 shadow-lg hover:shadow-xl"
+                        className="group relative flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-600 text-white rounded-2xl hover:from-gray-900 hover:to-black transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
                       >
-                        <Github className="w-5 h-5" />
-                        <span className="font-semibold">View Code</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                        <Github className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
+                        <span className="font-bold text-lg">View Code</span>
                       </motion.a>
 
                       {project.liveUrl && (
@@ -264,24 +290,26 @@ The project focused heavily on performance optimization and user experience, wit
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          whileHover={{ scale: 1.05 }}
+                          whileHover={{ scale: 1.05, y: -2 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                          className="group relative flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
                         >
-                          <ExternalLink className="w-5 h-5" />
-                          <span className="font-semibold">Live Demo</span>
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                          <ExternalLink className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                          <span className="font-bold text-lg">Live Demo</span>
                         </motion.a>
                       )}
-                    </div>
+                    </motion.div>
 
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-3">
                       {project.techStack.map((tech, index) => (
                         <motion.span
                           key={tech}
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                          className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold border border-blue-200 dark:border-blue-800 hover:scale-105 transition-transform duration-200"
+                          transition={{ duration: 0.4, delay: 1.4 + index * 0.1 }}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          className="px-5 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 rounded-2xl text-sm font-bold border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 cursor-pointer"
                         >
                           {tech}
                         </motion.span>
@@ -291,31 +319,80 @@ The project focused heavily on performance optimization and user experience, wit
                 </motion.div>
 
                 <motion.div
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
+                  transition={{ duration: 1, delay: 0.4 }}
                   className="relative"
                 >
-                  <div className="relative glass-card p-8 rounded-3xl">
-                    <div className="aspect-video rounded-2xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-2xl relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm"></div>
+                  <div className="relative glass-card p-10 rounded-3xl group">
+                    {/* Animated Background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl group-hover:from-blue-500/20 group-hover:via-purple-500/20 group-hover:to-pink-500/20 transition-all duration-500"></div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                      className="aspect-video rounded-3xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-2xl relative overflow-hidden cursor-pointer"
+                    >
+                      {/* Animated Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm group-hover:backdrop-blur-md transition-all duration-500"></div>
+                      
+                      {/* Floating Particles */}
+                      <div className="absolute inset-0 overflow-hidden">
+                        {[...Array(8)].map((_, i) => (
+                          <div
+                            key={i}
+                            className="absolute w-2 h-2 bg-white/30 rounded-full animate-ping"
+                            style={{
+                              left: `${Math.random() * 100}%`,
+                              top: `${Math.random() * 100}%`,
+                              animationDelay: `${Math.random() * 2}s`,
+                              animationDuration: `${2 + Math.random() * 2}s`
+                            }}
+                          />
+                        ))}
+                      </div>
+                      
                       <div className="relative z-10 text-center">
-                        <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <Code className="w-10 h-10 text-white" />
-                        </div>
-                        <span className="text-white font-bold text-2xl">
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                          className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm"
+                        >
+                          <Code className="w-12 h-12 text-white" />
+                        </motion.div>
+                        <span className="text-white font-bold text-3xl drop-shadow-lg">
                           {project.title.split(' ')[0]}
                         </span>
                       </div>
-                    </div>
+                    </motion.div>
                     
-                    {/* Floating Icons */}
-                    <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center animate-bounce">
-                      <Star className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center animate-pulse">
-                      <Sparkles className="w-5 h-5 text-white" />
-                    </div>
+                    {/* Enhanced Floating Icons */}
+                    <motion.div
+                      animate={{ y: [-10, 10, -10] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg"
+                    >
+                      <Star className="w-8 h-8 text-white" />
+                    </motion.div>
+                    <motion.div
+                      animate={{ y: [10, -10, 10] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg"
+                    >
+                      <Sparkles className="w-6 h-6 text-white" />
+                    </motion.div>
+                    
+                    {/* Additional Floating Elements */}
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                      className="absolute top-10 -left-4 w-8 h-8 bg-gradient-to-r from-pink-400 to-red-400 rounded-full opacity-60"
+                    />
+                    <motion.div
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                      className="absolute bottom-10 -right-4 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-60"
+                    />
                   </div>
                 </motion.div>
               </div>
@@ -395,127 +472,191 @@ The project focused heavily on performance optimization and user experience, wit
 
             {/* Project Overview */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="glass-card p-8 rounded-3xl mb-16"
+              className="glass-card p-10 rounded-3xl mb-20 relative overflow-hidden group"
             >
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
-                  <Target className="w-6 h-6 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-300 bg-clip-text text-transparent">
-                  Project Overview
-                </h2>
-              </div>
-              <div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300 leading-relaxed">
-                {project.longDescription.split('\n\n').map((paragraph, index) => (
-                  <motion.p
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="mb-6 text-lg"
-                  >
-                    {paragraph}
-                  </motion.p>
+              {/* Animated background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 group-hover:from-blue-500/10 group-hover:via-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500"></div>
+              
+              {/* Floating particles */}
+              <div className="absolute inset-0 overflow-hidden">
+                {[...Array(6)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-1 h-1 bg-blue-400/30 rounded-full animate-pulse"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 3}s`,
+                      animationDuration: `${2 + Math.random() * 2}s`
+                    }}
+                  />
                 ))}
+              </div>
+              
+              <div className="relative z-10">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="flex items-center space-x-4 mb-10"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+                    <Target className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-4xl font-black bg-gradient-to-r from-gray-900 to-blue-600 dark:from-white dark:to-blue-300 bg-clip-text text-transparent">
+                      Project Overview
+                    </h2>
+                    <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2"></div>
+                  </div>
+                </motion.div>
+                
+                <div className="prose prose-xl max-w-none text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {project.longDescription.split('\n\n').map((paragraph, index) => (
+                    <motion.p
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.2 }}
+                      viewport={{ once: true }}
+                      className="mb-8 text-lg leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 first-letter:mr-3 first-letter:float-left first-letter:leading-none"
+                    >
+                      {paragraph}
+                    </motion.p>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
             {/* Features, Challenges, and Outcomes */}
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="grid md:grid-cols-3 gap-10 mb-20">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="glass-card p-8 rounded-3xl hover:scale-105 transition-transform duration-300"
+                className="glass-card p-10 rounded-3xl hover:scale-105 transition-all duration-500 group relative overflow-hidden"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
-                  <Code className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-6">
+                {/* Animated background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 group-hover:from-blue-500/10 group-hover:to-cyan-500/10 transition-all duration-500"></div>
+                
+                {/* Floating icon */}
+                <motion.div
+                  animate={{ y: [-5, 5, -5] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                >
+                  <Code className="w-10 h-10 text-white" />
+                </motion.div>
+                
+                <h3 className="text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-8">
                   Key Features
                 </h3>
-                <ul className="space-y-3">
+                
+                <ul className="space-y-4">
                   {project.features.map((feature, index) => (
                     <motion.li
                       key={index}
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-start space-x-3 text-gray-600 dark:text-gray-300"
+                      whileHover={{ x: 5 }}
+                      className="flex items-start space-x-4 text-gray-600 dark:text-gray-300 group/item"
                     >
-                      <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                        <CheckCircle className="w-3 h-3 text-white" />
+                      <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                        <CheckCircle className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-sm font-medium leading-relaxed">{feature}</span>
+                      <span className="font-medium leading-relaxed group-hover/item:text-blue-600 dark:group-hover/item:text-blue-400 transition-colors duration-300">{feature}</span>
                     </motion.li>
                   ))}
                 </ul>
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="glass-card p-8 rounded-3xl hover:scale-105 transition-transform duration-300"
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6">
-                  <Palette className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-6">
-                  Challenges
-                </h3>
-                <ul className="space-y-3">
-                  {project.challenges.map((challenge, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      className="flex items-start space-x-3 text-gray-600 dark:text-gray-300"
-                    >
-                      <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm font-medium leading-relaxed">{challenge}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="glass-card p-8 rounded-3xl hover:scale-105 transition-transform duration-300"
+                className="glass-card p-10 rounded-3xl hover:scale-105 transition-all duration-500 group relative overflow-hidden"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-6">
-                  Outcomes
+                {/* Animated background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-500/5 group-hover:from-orange-500/10 group-hover:to-red-500/10 transition-all duration-500"></div>
+                
+                {/* Floating icon */}
+                <motion.div
+                  animate={{ y: [5, -5, 5] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                >
+                  <Palette className="w-10 h-10 text-white" />
+                </motion.div>
+                
+                <h3 className="text-3xl font-black bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-8">
+                  Challenges
                 </h3>
-                <ul className="space-y-3">
-                  {project.outcomes.map((outcome, index) => (
+                
+                <ul className="space-y-4">
+                  {project.challenges.map((challenge, index) => (
                     <motion.li
                       key={index}
-                      initial={{ opacity: 0, x: -10 }}
+                      initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       viewport={{ once: true }}
-                      className="flex items-start space-x-3 text-gray-600 dark:text-gray-300"
+                      whileHover={{ x: 5 }}
+                      className="flex items-start space-x-4 text-gray-600 dark:text-gray-300 group/item"
                     >
-                      <div className="w-5 h-5 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                        <Award className="w-3 h-3 text-white" />
+                      <div className="w-4 h-4 bg-gradient-to-r from-orange-400 to-red-400 rounded-full mt-1.5 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300"></div>
+                      <span className="font-medium leading-relaxed group-hover/item:text-orange-600 dark:group-hover/item:text-orange-400 transition-colors duration-300">{challenge}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="glass-card p-10 rounded-3xl hover:scale-105 transition-all duration-500 group relative overflow-hidden"
+              >
+                {/* Animated background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-teal-500/5 group-hover:from-green-500/10 group-hover:to-teal-500/10 transition-all duration-500"></div>
+                
+                {/* Floating icon */}
+                <motion.div
+                  animate={{ y: [-3, 7, -3] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-20 h-20 bg-gradient-to-r from-green-500 to-teal-500 rounded-3xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                >
+                  <Zap className="w-10 h-10 text-white" />
+                </motion.div>
+                
+                <h3 className="text-3xl font-black bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-8">
+                  Outcomes
+                </h3>
+                
+                <ul className="space-y-4">
+                  {project.outcomes.map((outcome, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ x: 5 }}
+                      className="flex items-start space-x-4 text-gray-600 dark:text-gray-300 group/item"
+                    >
+                      <div className="w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                        <Award className="w-4 h-4 text-white" />
                       </div>
-                      <span className="text-sm font-medium leading-relaxed">{outcome}</span>
+                      <span className="font-medium leading-relaxed group-hover/item:text-green-600 dark:group-hover/item:text-green-400 transition-colors duration-300">{outcome}</span>
                     </motion.li>
                   ))}
                 </ul>

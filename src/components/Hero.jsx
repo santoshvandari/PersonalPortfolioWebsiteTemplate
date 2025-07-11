@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail, Sparkles, Star, Zap } from 'lucide-react';
 
 const Hero = () => {
   const scrollToNext = () => {
