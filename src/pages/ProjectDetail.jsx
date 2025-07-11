@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   ArrowLeft, 
@@ -20,6 +20,37 @@ import {
 
 const ProjectDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  const handleBackToProjects = () => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.querySelector('#projects');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
+  const handleGetInTouch = () => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.querySelector('#contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
+  const handleViewMoreProjects = () => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.querySelector('#projects');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
 
   // Mock project data - in a real app, this would come from an API
   const projectData = {
@@ -202,13 +233,13 @@ The project focused heavily on performance optimization and user experience, wit
                 transition={{ duration: 0.6 }}
                 className="mb-12"
               >
-                <Link
-                  to="/"
+                <button
+                  onClick={handleBackToProjects}
                   className="inline-flex items-center space-x-2 glass-card px-6 py-3 rounded-xl hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 transform hover:scale-105"
                 >
                   <ArrowLeft className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   <span className="font-semibold text-gray-700 dark:text-gray-300">Back to Projects</span>
-                </Link>
+                </button>
               </motion.div>
 
               <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -730,23 +761,23 @@ The project focused heavily on performance optimization and user experience, wit
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Link
-                        to="/#contact"
+                      <button
+                        onClick={handleGetInTouch}
                         className="px-10 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl font-semibold"
                       >
                         Get In Touch
-                      </Link>
+                      </button>
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Link
-                        to="/#projects"
+                      <button
+                        onClick={handleViewMoreProjects}
                         className="px-10 py-4 border-2 border-blue-500 text-blue-600 dark:text-blue-400 rounded-xl hover:bg-blue-500 hover:text-white transition-all duration-300 font-semibold"
                       >
                         View More Projects
-                      </Link>
+                      </button>
                     </motion.div>
                   </div>
                 </div>
