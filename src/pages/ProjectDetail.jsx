@@ -165,14 +165,12 @@ The project focused heavily on performance optimization and user experience, wit
   if (!project) {
     return (
       <div className="min-h-screen relative overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] [background-size:20px_20px] animate-pulse"></div>
+        {/* Enhanced Animated Background - Matching other sections */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-pink-400/20 to-orange-400/20 rounded-full blur-3xl animate-float-delayed"></div>
         
         <div className="relative z-10 flex items-center justify-center min-h-screen">
           <motion.div
@@ -185,10 +183,10 @@ The project focused heavily on performance optimization and user experience, wit
               <div className="w-20 h-20 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Zap className="w-10 h-10 text-white" />
               </div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-4">
+              <h1 className="text-3xl font-bold text-white mb-4">
                 Project Not Found
               </h1>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-gray-300 mb-8">
                 The project you're looking for doesn't exist.
               </p>
               <Link
@@ -207,19 +205,41 @@ The project focused heavily on performance optimization and user experience, wit
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.15)_1px,transparent_0)] [background-size:20px_20px] animate-pulse"></div>
+      {/* Enhanced Animated Background - Matching other sections */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-6000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-8000"></div>
       </div>
       
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute top-40 right-40 w-32 h-32 bg-gradient-to-r from-pink-400/30 to-orange-400/30 rounded-full blur-2xl animate-float-delayed"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-40 left-40 w-48 h-48 bg-gradient-to-r from-green-400/20 to-teal-400/20 rounded-full blur-2xl animate-float-delayed"></div>
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white/30 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
       
       <div className="relative z-10 pt-16">
-        {/* Hero Section */}
+        {/* Enhanced Hero Section */}
         <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -235,10 +255,10 @@ The project focused heavily on performance optimization and user experience, wit
               >
                 <button
                   onClick={handleBackToProjects}
-                  className="inline-flex items-center space-x-2 glass-card px-6 py-3 rounded-xl hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center space-x-2 glass-card px-6 py-3 rounded-xl hover:bg-white/20 transition-all duration-300 transform hover:scale-105 group"
                 >
-                  <ArrowLeft className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                  <span className="font-semibold text-gray-700 dark:text-gray-300">Back to Projects</span>
+                  <ArrowLeft className="w-5 h-5 text-teal-400 group-hover:text-white transition-colors duration-300" />
+                  <span className="font-semibold text-white group-hover:text-teal-200 transition-colors duration-300">Back to Projects</span>
                 </button>
               </motion.div>
 
@@ -250,8 +270,24 @@ The project focused heavily on performance optimization and user experience, wit
                   className="relative"
                 >
                   <div className="glass-card p-10 rounded-3xl relative overflow-hidden group">
-                    {/* Animated Border */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500"></div>
+                    {/* Enhanced Animated Border */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-teal-500 via-blue-500 to-purple-500 rounded-3xl opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500"></div>
+                    
+                    {/* Floating Particles */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      {[...Array(6)].map((_, i) => (
+                        <div
+                          key={i}
+                          className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
+                          style={{
+                            left: `${Math.random() * 100}%`,
+                            top: `${Math.random() * 100}%`,
+                            animationDelay: `${Math.random() * 3}s`,
+                            animationDuration: `${2 + Math.random() * 2}s`
+                          }}
+                        />
+                      ))}
+                    </div>
                     
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
@@ -259,14 +295,14 @@ The project focused heavily on performance optimization and user experience, wit
                       transition={{ duration: 0.6, delay: 0.4 }}
                       className="flex items-center space-x-4 mb-8"
                     >
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center shadow-lg">
+                      <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
                         <Sparkles className="w-8 h-8 text-white animate-pulse" />
                       </div>
                       <div>
-                        <span className="text-sm font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                        <span className="text-sm font-bold text-teal-400 uppercase tracking-wider">
                           Featured Project
                         </span>
-                        <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-1"></div>
+                        <div className="w-20 h-1 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full mt-1"></div>
                       </div>
                     </motion.div>
                     
@@ -274,7 +310,7 @@ The project focused heavily on performance optimization and user experience, wit
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.6 }}
-                      className="text-5xl md:text-6xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-purple-600 dark:from-white dark:via-blue-200 dark:to-purple-300 bg-clip-text text-transparent mb-6 leading-tight"
+                      className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight"
                     >
                       {project.title}
                     </motion.h1>
@@ -283,7 +319,7 @@ The project focused heavily on performance optimization and user experience, wit
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.8 }}
-                      className="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text mb-8"
+                      className="text-2xl font-bold text-teal-300 mb-8"
                     >
                       {project.subtitle}
                     </motion.p>
@@ -292,7 +328,7 @@ The project focused heavily on performance optimization and user experience, wit
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 1 }}
-                      className="text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed"
+                      className="text-xl text-gray-300 mb-10 leading-relaxed"
                     >
                       {project.description}
                     </motion.p>
@@ -309,11 +345,11 @@ The project focused heavily on performance optimization and user experience, wit
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
-                        className="group relative flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-600 text-white rounded-2xl hover:from-gray-900 hover:to-black transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
+                        className="group relative flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-2xl hover:from-gray-900 hover:to-black transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                         <Github className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-                        <span className="font-bold text-lg">View Code</span>
+                        <span className="font-bold text-lg relative z-10">View Code</span>
                       </motion.a>
 
                       {project.liveUrl && (
@@ -323,11 +359,11 @@ The project focused heavily on performance optimization and user experience, wit
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05, y: -2 }}
                           whileTap={{ scale: 0.95 }}
-                          className="group relative flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
+                          className="group relative flex items-center space-x-3 px-10 py-5 bg-gradient-to-r from-teal-600 to-blue-600 text-white rounded-2xl hover:from-teal-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl overflow-hidden"
                         >
                           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                           <ExternalLink className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                          <span className="font-bold text-lg">Live Demo</span>
+                          <span className="font-bold text-lg relative z-10">Live Demo</span>
                         </motion.a>
                       )}
                     </motion.div>
@@ -340,7 +376,7 @@ The project focused heavily on performance optimization and user experience, wit
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.4, delay: 1.4 + index * 0.1 }}
                           whileHover={{ scale: 1.1, y: -2 }}
-                          className="px-5 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 rounded-2xl text-sm font-bold border border-blue-200 dark:border-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-300 cursor-pointer"
+                          className="px-5 py-3 bg-gradient-to-r from-teal-500/20 to-blue-500/20 border border-teal-500/30 text-teal-300 rounded-2xl text-sm font-bold hover:bg-gradient-to-r hover:from-teal-500/30 hover:to-blue-500/30 hover:border-teal-400/50 transition-all duration-300"
                         >
                           {tech}
                         </motion.span>
@@ -356,20 +392,20 @@ The project focused heavily on performance optimization and user experience, wit
                   className="relative"
                 >
                   <div className="relative glass-card p-10 rounded-3xl group">
-                    {/* Animated Background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl group-hover:from-blue-500/20 group-hover:via-purple-500/20 group-hover:to-pink-500/20 transition-all duration-500"></div>
+                    {/* Enhanced Animated Background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl group-hover:from-teal-500/20 group-hover:via-blue-500/20 group-hover:to-purple-500/20 transition-all duration-500"></div>
                     
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
-                      className="aspect-video rounded-3xl bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center shadow-2xl relative overflow-hidden cursor-pointer"
+                      className="aspect-video rounded-3xl bg-gradient-to-br from-teal-500 via-blue-500 to-purple-500 flex items-center justify-center shadow-2xl relative overflow-hidden"
                     >
-                      {/* Animated Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm group-hover:backdrop-blur-md transition-all duration-500"></div>
+                      {/* Enhanced Animated Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-600/20 to-blue-600/20 backdrop-blur-sm group-hover:backdrop-blur-md transition-all duration-500"></div>
                       
-                      {/* Floating Particles */}
+                      {/* Enhanced Floating Particles */}
                       <div className="absolute inset-0 overflow-hidden">
-                        {[...Array(8)].map((_, i) => (
+                        {[...Array(12)].map((_, i) => (
                           <div
                             key={i}
                             className="absolute w-2 h-2 bg-white/30 rounded-full animate-ping"
@@ -387,11 +423,11 @@ The project focused heavily on performance optimization and user experience, wit
                         <motion.div
                           animate={{ rotate: 360 }}
                           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                          className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm"
+                          className="w-28 h-28 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm"
                         >
-                          <Code className="w-12 h-12 text-white" />
+                          <Code className="w-14 h-14 text-white" />
                         </motion.div>
-                        <span className="text-white font-bold text-3xl drop-shadow-lg">
+                        <span className="text-white font-bold text-4xl drop-shadow-lg">
                           {project.title.split(' ')[0]}
                         </span>
                       </div>
@@ -399,30 +435,30 @@ The project focused heavily on performance optimization and user experience, wit
                     
                     {/* Enhanced Floating Icons */}
                     <motion.div
-                      animate={{ y: [-10, 10, -10] }}
+                      animate={{ y: [-10, 10, -10], rotate: [0, 5, 0] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-xl"
                     >
                       <Star className="w-8 h-8 text-white" />
                     </motion.div>
                     <motion.div
-                      animate={{ y: [10, -10, 10] }}
+                      animate={{ y: [10, -10, 10], rotate: [0, -5, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg"
+                      className="absolute -bottom-6 -left-6 w-12 h-12 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center shadow-xl"
                     >
                       <Sparkles className="w-6 h-6 text-white" />
                     </motion.div>
                     
-                    {/* Additional Floating Elements */}
+                    {/* Additional Enhanced Floating Elements */}
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                      className="absolute top-10 -left-4 w-8 h-8 bg-gradient-to-r from-pink-400 to-red-400 rounded-full opacity-60"
+                      className="absolute top-10 -left-4 w-10 h-10 bg-gradient-to-r from-pink-400 to-red-400 rounded-full opacity-80 shadow-lg"
                     />
                     <motion.div
                       animate={{ rotate: -360 }}
                       transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-                      className="absolute bottom-10 -right-4 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-60"
+                      className="absolute bottom-10 -right-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-80 shadow-lg"
                     />
                   </div>
                 </motion.div>
@@ -431,8 +467,7 @@ The project focused heavily on performance optimization and user experience, wit
           </div>
         </section>
 
-        
-        {/* Project Info */}
+        {/* Enhanced Project Info */}
         <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -440,21 +475,24 @@ The project focused heavily on performance optimization and user experience, wit
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="glass-card p-8 rounded-3xl mb-16"
+              className="glass-card p-8 rounded-3xl mb-16 relative overflow-hidden"
             >
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Enhanced background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 via-blue-500/5 to-purple-500/5"></div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="text-center group"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Calendar className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Duration</h3>
-                  <p className="text-gray-600 dark:text-gray-300 font-semibold">{project.duration}</p>
+                  <h3 className="font-bold text-white mb-2 text-lg">Duration</h3>
+                  <p className="text-teal-300 font-semibold">{project.duration}</p>
                 </motion.div>
 
                 <motion.div
@@ -462,13 +500,13 @@ The project focused heavily on performance optimization and user experience, wit
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="text-center group"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Users className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Team Size</h3>
-                  <p className="text-gray-600 dark:text-gray-300 font-semibold">{project.teamSize}</p>
+                  <h3 className="font-bold text-white mb-2 text-lg">Team Size</h3>
+                  <p className="text-green-300 font-semibold">{project.teamSize}</p>
                 </motion.div>
 
                 <motion.div
@@ -476,13 +514,13 @@ The project focused heavily on performance optimization and user experience, wit
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="text-center group"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Award className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Role</h3>
-                  <p className="text-gray-600 dark:text-gray-300 font-semibold">{project.role}</p>
+                  <h3 className="font-bold text-white mb-2 text-lg">Role</h3>
+                  <p className="text-orange-300 font-semibold">{project.role}</p>
                 </motion.div>
 
                 <motion.div
@@ -490,13 +528,13 @@ The project focused heavily on performance optimization and user experience, wit
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="text-center"
+                  className="text-center group"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <CheckCircle className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2 text-lg">Status</h3>
-                  <p className="text-gray-600 dark:text-gray-300 font-semibold">{project.status}</p>
+                  <h3 className="font-bold text-white mb-2 text-lg">Status</h3>
+                  <p className="text-emerald-300 font-semibold">{project.status}</p>
                 </motion.div>
               </div>
             </motion.div>
