@@ -1,56 +1,59 @@
-# 🌟 Web Developer Portfolio
+# 🌟 Modern Web Developer Portfolio
 
-A stunning, modern, and responsive portfolio website built with React and cutting-edge UI/UX design principles. This portfolio showcases creativity, professionalism, and strong front-end development skills.
+A stunning, responsive portfolio website built with React, Tailwind CSS, and Framer Motion. Features glassmorphism design, smooth animations, and a modern user experience.
 
-![Portfolio Preview](./preview.png)
+![Portfolio Preview](https://via.placeholder.com/800x400/1f2937/ffffff?text=Portfolio+Preview)
 
 ## ✨ Features
 
 ### 🚀 Core Features
-- **Responsive Design** - Mobile-first approach, works on all devices
+- **Responsive Design** - Mobile-first approach, works seamlessly on all devices
 - **Dark Mode Toggle** - Persistent theme switching with smooth animations
-- **Smooth Animations** - Framer Motion powered interactions
-- **Modern UI/UX** - Clean, minimalistic design with professional aesthetics
+- **Smooth Animations** - Framer Motion powered interactions and transitions
+- **Modern UI/UX** - Glassmorphism effects and professional aesthetics
 - **Performance Optimized** - Fast loading and efficient state management
+- **SEO Friendly** - Optimized for search engines with proper meta tags
 
 ### 📱 Sections
-- **Hero Section** - Fullscreen intro with animated background
-- **About Me** - Professional bio with downloadable resume
-- **Skills** - Interactive skill categories with proficiency levels
-- **Projects** - Filterable project showcase with detailed views
-- **Experience** - Timeline-based professional history
-- **Testimonials** - Client feedback carousel
-- **Contact** - Functional contact form with validation
+- **Hero Section** - Eye-catching intro with animated background and floating elements
+- **About Me** - Professional bio with skills highlights and downloadable resume
+- **Skills** - Interactive skill categories with proficiency levels and experience
+- **Projects** - Filterable project showcase with detailed project pages
+- **Experience** - Timeline-based professional history with achievements
+- **Testimonials** - Client feedback carousel with enhanced review cards
+- **Contact** - Functional contact form with validation and toast notifications
 
 ### 🎨 Design Highlights
-- **Color Scheme**: Teal primary with dark navy accents
-- **Typography**: Inter font family for excellent readability
-- **Animations**: Smooth transitions and micro-interactions
-- **Accessibility**: WCAG compliant with semantic HTML
-- **Performance**: Optimized images and lazy loading
+- **Glassmorphism Effects** - Modern glass-like UI elements with backdrop blur
+- **Color Scheme** - Vibrant gradients with teal, purple, and blue accents
+- **Typography** - Clean, readable fonts with proper hierarchy
+- **Animations** - Smooth transitions, hover effects, and micro-interactions
+- **Accessibility** - WCAG compliant with semantic HTML and proper contrast
+- **Performance** - Optimized images, lazy loading, and efficient rendering
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React** - Modern JavaScript library
-- **Vite** - Lightning-fast build tool
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **React Router** - Client-side routing
-- **Lucide React** - Beautiful icons
-- **React Hot Toast** - Notification system
+- **React 18** - Modern JavaScript library with hooks
+- **Vite** - Lightning-fast build tool and development server
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **Framer Motion** - Production-ready motion library
+- **React Router DOM** - Client-side routing and navigation
+- **Lucide React** - Beautiful, customizable icons
+- **React Hot Toast** - Elegant notification system
 
-### Development
-- **JavaScript** - ES6+ features
+### Development Tools
+- **JavaScript ES6+** - Modern JavaScript features
 - **CSS3** - Modern styling with custom properties
-- **HTML5** - Semantic markup
-- **Git** - Version control
+- **HTML5** - Semantic markup and accessibility
+- **Git** - Version control and collaboration
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
+- Node.js (v18 or higher)
+- npm or yarn package manager
+- Git for version control
 
 ### Installation
 
@@ -79,7 +82,7 @@ A stunning, modern, and responsive portfolio website built with React and cuttin
 npm run build
 ```
 
-The build files will be in the `dist` directory, ready for deployment.
+The optimized build files will be in the `dist` directory, ready for deployment.
 
 ## 📁 Project Structure
 
