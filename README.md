@@ -1,12 +1,56 @@
-# React + Vite
+# Modern React Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visually stunning, responsive portfolio website built with React, Vite, Tailwind CSS, and Framer Motion. Showcases projects, skills, testimonials, and contact info with smooth animations and a professional UI.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
+- **Frontend:** React (JavaScript), Vite
+- **Styling:** Tailwind CSS, custom animations
+- **Animation:** Framer Motion
+- **Routing:** React Router DOM
+- **Icons:** Lucide React
+- **Notifications:** React Hot Toast
+- **State Management:** React Context API (theme)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+- Responsive, mobile-first design
+- Dark mode toggle (localStorage persistence)
+- Glassmorphism, gradients, floating elements
+- Smooth page transitions and micro-interactions
+- Modular, maintainable code structure
+- Accessible, semantic HTML
+- Performance optimized (lazy loading, efficient state)
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
+- `src/components/` – UI components
+- `src/pages/` – Page components
+- `src/hooks/` – Custom hooks
+- `src/data/` – Portfolio data
+- `src/` – Main App and entry point
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖥️ Getting Started
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/yourusername/portfolio-website.git
+   cd portfolio-website
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run locally:**
+   ```bash
+   npm run dev
+   ```
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📝 Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## 📄 License
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
+
+## 💬 Contact
+For questions or collaborations, open an issue or use the contact form on the website.

@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Toaster } from 'react-hot-toast';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import ProjectDetail from './pages/ProjectDetail';
+import { ThemeProvider } from './hooks/useTheme';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider>
+      <Router>
+        <div className="min-h-screen bg-white dark:bg-dark-900 transition-colors duration-300">
+          <Toaster 
+            position="top-right"
+            toastOptions={{
+              className: 'dark:bg-dark-800 dark:text-white',
+              duration: 3000,
+            }}
+          />
+          <Header />
+          
+          <Routes>
+            <Route path="/" element={
+              <main>
+                <Hero />
+                <About />
+                <Skills />
+                <Projects />
+                <Experience />
+                <Testimonials />
+                <Contact />
+              </main>
+            } />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+          </Routes>
+          
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
