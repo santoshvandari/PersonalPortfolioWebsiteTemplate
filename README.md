@@ -30,8 +30,8 @@ A visually stunning, responsive portfolio website built with React, Vite, Tailwi
 ## 🖥️ Getting Started
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
-   cd portfolio-website
+   git clone https://github.com/santoshvandari/PersonalPortfolioWebsiteTemplate.git
+   cd PersonalPortfolioWebsiteTemplate
    ```
 2. **Install dependencies:**
    ```bash
